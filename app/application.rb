@@ -8,7 +8,7 @@ class Application
     @@items=[]
 
     if req.path.match(/items/)
-      search_term = req.path.split("/items").last
+      search_term = req.path.split("/items/").last
       item = @@items.find {|i| i.name=search_term}
       binding.pry
       if item.nil?
