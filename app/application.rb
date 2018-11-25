@@ -11,11 +11,11 @@ class Application
       if @@items.contain?(item)
         resp.write "#{item.price}"
       else
-        resp.write "Error"
+        resp.write "Item not found"
         resp.status =400
       end
     else
-      resp.write "Item not found"
+      resp.write "Route not found"
       resp.status = 404
     end
     resp.finish
