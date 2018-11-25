@@ -2,7 +2,7 @@ class Application
 
   def call (env)
     resp = Rack::Response.new
-    req = Rack::Request
+    req = Rack::Request.new
 
     if req.path"items/item/"
       if @@items.contain?(item)
