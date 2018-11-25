@@ -9,7 +9,7 @@ class Application
 
     if req.path.match(/items/)
       search_term = req.path.split("/items/").last
-      item_finder = @@items.find {|i| i.name=search_term}
+      item_finder = @@items.find {|i| i.name==search_term}
 
       if item_finder.nil?
         resp.write "Item not found"
