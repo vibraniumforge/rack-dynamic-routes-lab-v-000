@@ -1,4 +1,4 @@
-
+require "pry"
 class Application
 
   def call (env)
@@ -10,6 +10,7 @@ class Application
     if req.path.match(/items/)
       search_term = req.path.split("/items").last
       item = @@items.find {|i| i.name=search_term}
+      binding.pry
       if item.nil?
         resp.write "Item not found"
         resp.status =400
