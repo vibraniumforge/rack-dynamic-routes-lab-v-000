@@ -7,8 +7,6 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-
-
     if req.path.match(/items/)
       search_term = req.path.split("/items/").last
       item = @@items.find {|i| i.name=search_term}
