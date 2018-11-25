@@ -8,6 +8,7 @@ class Application
     @@items=[]
 
     if req.path=="items/item/"
+      puts req.path
       if @@items.contain?(item)
         resp.write "#{item.price}"
       else
