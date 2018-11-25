@@ -1,4 +1,4 @@
-require "pry"
+
 class Application
 
   def call (env)
@@ -6,7 +6,7 @@ class Application
     req = Rack::Request.new(env)
 
     @@items=[]
-    binding.pry
+
     if req.path=="items/item/"
       if @@items.contain?(item)
         resp.write "#{item.price}"
