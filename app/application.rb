@@ -3,7 +3,9 @@ class Application
   def call (env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
+
     @@items=[]
+
     if req.path=="items/item/"
       if @@items.contain?(item)
         resp.write "#{item.price}"
