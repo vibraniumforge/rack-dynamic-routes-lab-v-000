@@ -22,6 +22,5 @@ class Application
       resp.status = 404
     end
     resp.finish
-      # binding.pry
   end
 end
