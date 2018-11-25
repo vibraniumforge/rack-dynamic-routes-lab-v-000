@@ -7,9 +7,9 @@ class Application
 
     @@items=[]
 
-    if req.path=="items/item/"
-      puts req.path
-      if @@items.contain?(item)
+    if req.path.match(/items/)
+      search_term = req.path.split("/items").last
+      if @@items.contain?(search_item)
         resp.write "#{item.price}"
       else
         resp.write "Item not found"
